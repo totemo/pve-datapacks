@@ -1,0 +1,35 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "loot_table",
+                    "name": "minecraft:vanilla/chests/stronghold_library"
+                }
+            ]
+        },
+        {
+            "rolls": {
+                "min": 0,
+                "max": 3
+            },
+            "entries": [
+                {
+#include            "piece-of-eight"
+                }
+            ]
+        },
+        {
+            "rolls": 1,
+            "entries": [
+                {
+#include            "rum"
+                },
+                {
+#include            "treasure-map"
+                }
+            ]
+        }
+    ]
+}
