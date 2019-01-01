@@ -13,7 +13,7 @@ DATA_DIR="$BASE_DIR/src/data"
 
 #------------------------------------------------------------------------------
 
-for FILE in $(cd templates && find . -name '*.template'); do
+for FILE in $(cd templates && find . -name '*.template' | sort); do
     T="${FILE##./}"
     mkdir -p "$DATA_DIR"
     JSON="${T%%.template}"
