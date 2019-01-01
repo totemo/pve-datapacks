@@ -63,6 +63,7 @@ You will need a UNIX-like environment with:
 
  * Bourne Again Shell (Bash)
  * GNU C Preprocessor
+ * `jq` Command-Line JSON Processor
  * Java `jar` utility
  * `zip` command line utility
  

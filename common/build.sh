@@ -11,6 +11,6 @@ GENERATE="$HERE/generate.sh"
 
 mkdir -p "$DIST"
 rm -f "$ARCHIVE"
-cd "$HERE/src/" && zip -r "$ARCHIVE" .
+cd "$HERE/src/" && zip -r "$ARCHIVE" . > /dev/null
 
-echo "Created $ARCHIVE"
+echo "ZIPPING $ARCHIVE"

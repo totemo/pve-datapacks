@@ -18,7 +18,7 @@ for FILE in $(cd templates && find . -name '*.template' | sort); do
     mkdir -p "$DATA_DIR"
     JSON="${T%%.template}"
     echo GENERATING "src/data/$JSON"
-    if ! cpp -P -I"$ITEMS_DIR" < "$TEMPLATES_DIR/$T" > "$DATA_DIR/$JSON"; then
+    if ! cpp -P -I"$ITEMS_DIR" < "$TEMPLATES_DIR/$T" | jq . --indent 4 > "$DATA_DIR/$JSON"; then
         echo >&2 "ERROR processing template inclusions."
         exit 1
     fi
