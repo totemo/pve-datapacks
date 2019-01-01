@@ -1,0 +1,61 @@
+{
+    "pools": [
+        {
+            "rolls": {
+                "min": 0,
+                "max": 2
+            },
+            "entries": [
+                {
+                    "weight": 1,
+#include            "piece-of-eight"
+                }
+            ]
+        },
+        {
+            "rolls": {
+                "min": 0,
+                "max": 1
+            },
+            "entries": [
+                {
+                    "weight": 1,
+#include            "daughter-emerald"
+                }
+            ]
+        },
+        {
+            "rolls": 20,
+            "entries": [
+                {
+                    "weight": 2,
+                    "type": "item",
+                    "name": "minecraft:potato",
+                    "functions" : [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 4
+                            }
+                        }
+                    ]
+                },
+                {
+                    "weight": 1,
+                    "type": "item",
+                    "name": "minecraft:poisonous_potato",
+                    "functions" : [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 3
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

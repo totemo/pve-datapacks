@@ -1,0 +1,2 @@
+# Don't commit Mojang assets to github.
+*.json
