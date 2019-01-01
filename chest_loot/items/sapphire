@@ -1,13 +1,13 @@
                     "type": "item",
-                    "name": "minecraft:iron_nugget",
+                    "name": "minecraft:lapis_lazuli",
                     "functions": [
                         {
                             "function": "minecraft:set_name",
-                            "name": "§7Piece of Eight §2[COMMON]"
+                            "name": "§9Sapphire §d[SUPER RARE]"
                         },
                         {
                             "function": "minecraft:set_nbt",
-                            "tag": "{display:{Lore:[\"§f8 real reales!\",\"Trade this precious booty at spawn!\"]}}"
+                            "tag": "{display:{Lore:[\"§3It's as if you hold an ocean\",\"§3in the palm of your hand.\",\"Trade this precious booty at spawn!\"]}}"
                         },
                         {
                             "function": "minecraft:set_nbt",

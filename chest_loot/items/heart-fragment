@@ -1,13 +1,13 @@
                     "type": "item",
-                    "name": "minecraft:iron_nugget",
+                    "name": "minecraft:cyan_dye",
                     "functions": [
                         {
                             "function": "minecraft:set_name",
-                            "name": "§7Piece of Eight §2[COMMON]"
+                            "name": "§3Glistening Heart Fragment"
                         },
                         {
                             "function": "minecraft:set_nbt",
-                            "tag": "{display:{Lore:[\"§f8 real reales!\",\"Trade this precious booty at spawn!\"]}}"
+                            "tag": "{display:{Lore:[\"§bLooks to be about an eighth of a Heart of the Sea.\"]}}"
                         },
                         {
                             "function": "minecraft:set_nbt",

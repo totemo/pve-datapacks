@@ -8,5 +8,9 @@
                         {
                             "function": "minecraft:set_nbt",
                             "tag": "{display:{Lore:[\"§2The gem is small but you feel it is\",\"§2meant for something bigger. Umina is calling.\",\"Trade this precious booty at spawn!\"]}}"
+                        },
+                        {
+                            "function": "minecraft:set_nbt",
+                            "tag": "{Enchantments:[{id:\"minecraft:infinity\",lvl:1s}]}"
                         }
                     ]

@@ -1,13 +1,13 @@
                     "type": "item",
-                    "name": "minecraft:iron_nugget",
+                    "name": "minecraft:prismarine_crystals",
                     "functions": [
                         {
                             "function": "minecraft:set_name",
-                            "name": "§7Piece of Eight §2[COMMON]"
+                            "name": "§fPearls §6[RARE]"
                         },
                         {
                             "function": "minecraft:set_nbt",
-                            "tag": "{display:{Lore:[\"§f8 real reales!\",\"Trade this precious booty at spawn!\"]}}"
+                            "tag": "{display:{Lore:[\"§bThey're not large, and they won't teleport you\",\"§bbut maybe they're valuable.\",\"Trade this precious booty at spawn!\"]}}"
                         },
                         {
                             "function": "minecraft:set_nbt",

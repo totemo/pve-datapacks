@@ -1,16 +1,20 @@
                     "type": "item",
-                    "name": "minecraft:iron_nugget",
+                    "name": "minecraft:potion",
                     "functions": [
                         {
                             "function": "minecraft:set_name",
-                            "name": "§7Piece of Eight §2[COMMON]"
+                            "name": "§6Rum [Rare]"
                         },
                         {
                             "function": "minecraft:set_nbt",
-                            "tag": "{display:{Lore:[\"§f8 real reales!\",\"Trade this precious booty at spawn!\"]}}"
+                            "tag": "{display:{Lore:[\"§cYo, ho, ho! \",\"Trade this precious booty at spawn!\"]}}"
                         },
                         {
                             "function": "minecraft:set_nbt",
                             "tag": "{Enchantments:[{id:\"minecraft:infinity\",lvl:1s}]}"
+                        },
+                        {
+                            "function": "minecraft:set_nbt",
+                            "tag": "{Potion:\"minecraft:fire_resistance\"}"
                         }
                     ]
