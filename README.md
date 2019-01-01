@@ -10,7 +10,7 @@ Some vanilla Minecraft 1.13.2 chest loot tables are modified with additional
 custom drops. These loot tables have names of the form
 `minecraft:chests/<name>`.
 
-For simplicity the augmented vanilla Minecraft chest loot tables are defined
+For simplicity, the augmented vanilla Minecraft chest loot tables are defined
 in terms of an unmodified copy of the vanilla Minecraft chest loot tables,
 renamed as `minecraft:vanilla/chests/<name>`.
 
@@ -33,26 +33,22 @@ It's prohibitively inconvenient to have to find a generated structure in order
 to verify the correct operation of these loot tables. The commands listed below
 can check and set the loot table associated with a chest.
 
- * In Minecraft 1.13.2:
-   * You can set the loot table of a pre-existing chest (under your feet):
+### Minecraft 1.13.2 Loot Table Commands
+ * You can set the loot table of a pre-existing chest (under your feet):
 ```
 /data merge block ~ ~ ~ {LootTable:"otgconfigs:chests/end_villager_pod"}
 ```
-   * You can also *read* the loot table (and other NBT data) of that chest:
+ * You can also *read* the loot table (and other NBT data) of that chest:
 ```
 /data get block ~ ~ ~
 ```
  
- * In Minecraft 1.12.2, the commands are a little different:
-   * You can create a new chest with a specific loot table like so:
-```
-/setblock ~ ~ ~ minecraft:chest facing=south {LootTable:"otgconfigs:chests/end_egg_endermite"}
-```
-   * Or you can set the loot table of a pre-existing chest (under your feet):
+### Minecraft 1.12.2 Loot Table Commands
+ * You can set the loot table of a pre-existing chest (under your feet):
 ```
 /blockdata ~ ~-1 ~ {LootTable:"otgconfigs:chests/end_egg_endermite"}
 ```
-   * You can also *read* the loot table (and other NBT data) of that chest:
+ * You can also *read* the loot table (and other NBT data) of that chest:
 ```
 /blockdata ~ ~-1 ~ {}
 ```
@@ -65,10 +61,10 @@ here, follow these instructions.
 
 You will need a UNIX-like environment with:
 
- * The Bourne Again Shell (Bash)
- * The GNU C Preprocessor
- * The Java `jar` utility
- * The `zip` command line utility
+ * Bourne Again Shell (Bash)
+ * GNU C Preprocessor
+ * Java `jar` utility
+ * `zip` command line utility
  
 Clone this repository and then run `build.sh`:
 ```
