@@ -12,7 +12,7 @@
             "entries": [
                 {
                     "type": "loot_table",
-                    "name": "minecraft:vanilla/chests/underwater_ruin_big"
+                    "name": "minecraft:vanilla/chests/buried_treasure"
                 }
             ]
         },
