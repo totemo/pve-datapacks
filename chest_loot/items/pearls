@@ -1,16 +1,24 @@
-                    "type": "item",
-                    "name": "minecraft:prismarine_crystals",
-                    "functions": [
-                        {
-                            "function": "minecraft:set_name",
-                            "name": "§fPearls §6[RARE]"
-                        },
-                        {
-                            "function": "minecraft:set_nbt",
-                            "tag": "{display:{Lore:[\"§bThey're not large, and they won't teleport you\",\"§bbut maybe they're valuable.\",\"Trade this precious booty at spawn!\"]}}"
-                        },
-                        {
-                            "function": "minecraft:set_nbt",
-                            "tag": "{Enchantments:[{id:\"minecraft:infinity\",lvl:1s}]}"
-                        }
-                    ]
+#define pearls(MIN,MAX) \
+    "type": "item", \
+    "name": "minecraft:prismarine_crystals", \
+    "functions": [ \
+        { \
+            "function": "minecraft:set_name", \
+            "name": "§fPearls §6[RARE]" \
+        }, \
+        { \
+            "function": "minecraft:set_nbt", \
+            "tag": "{display:{Lore:[\"§bThey're not large, and they won't teleport you\",\"§bbut maybe they're valuable.\",\"Trade this precious booty at spawn!\"]}}" \
+        }, \
+        { \
+            "function": "minecraft:set_nbt", \
+            "tag": "{Enchantments:[{id:\"minecraft:infinity\",lvl:1s}]}" \
+        }, \
+        { \
+            "function": "minecraft:set_count", \
+            "count": { \
+                "min": MIN, \
+                "max": MAX \
+            } \
+        } \
+    ]

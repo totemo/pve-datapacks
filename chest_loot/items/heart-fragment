@@ -1,16 +1,24 @@
-                    "type": "item",
-                    "name": "minecraft:cyan_dye",
-                    "functions": [
-                        {
-                            "function": "minecraft:set_name",
-                            "name": "§3Glistening Heart Fragment"
-                        },
-                        {
-                            "function": "minecraft:set_nbt",
-                            "tag": "{display:{Lore:[\"§bLooks to be about an eighth of a Heart of the Sea.\"]}}"
-                        },
-                        {
-                            "function": "minecraft:set_nbt",
-                            "tag": "{Enchantments:[{id:\"minecraft:infinity\",lvl:1s}]}"
-                        }
-                    ]
+#define heart_fragment(MIN,MAX) \
+    "type": "item", \
+    "name": "minecraft:cyan_dye", \
+    "functions": [ \
+        { \
+            "function": "minecraft:set_name", \
+            "name": "§3Glistening Heart Fragment" \
+        }, \
+        { \
+            "function": "minecraft:set_nbt", \
+            "tag": "{display:{Lore:[\"§bLooks to be about an eighth of a Heart of the Sea.\"]}}" \
+        }, \
+        { \
+            "function": "minecraft:set_nbt", \
+            "tag": "{Enchantments:[{id:\"minecraft:infinity\",lvl:1s}]}" \
+        }, \
+        { \
+            "function": "minecraft:set_count", \
+            "count": { \
+                "min": MIN, \
+                "max": MAX \
+            } \
+        } \
+    ]

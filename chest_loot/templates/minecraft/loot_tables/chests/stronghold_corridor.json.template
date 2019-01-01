@@ -1,3 +1,7 @@
+#include "piece-of-eight"
+#include "rum"
+#include "treasure-map"
+
 {
     "pools": [
         {
@@ -10,13 +14,10 @@
             ]
         },
         {
-            "rolls": {
-                "min": 0,
-                "max": 3
-            },
+            "rolls": 1,
             "entries": [
                 {
-#include            "piece-of-eight"
+                    piece_of_eight(0,3)
                 }
             ]
         },
@@ -24,10 +25,10 @@
             "rolls": 1,
             "entries": [
                 {
-#include            "rum"
+                    rum(0,1)
                 },
                 {
-#include            "treasure-map"
+                    treasure_map(0,1)
                 }
             ]
         }

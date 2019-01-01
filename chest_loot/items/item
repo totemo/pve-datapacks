@@ -1,0 +1,13 @@
+#define item(TYPE,MIN,MAX) \
+    "type": "item", \
+    "name": TYPE, \
+    "functions" : [ \
+        { \
+            "function": "minecraft:set_count", \
+            "count": { \
+                "min": 1, \
+                "max": 3 \
+            } \
+        } \
+    ]
+

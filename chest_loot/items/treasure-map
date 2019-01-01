@@ -1,16 +1,24 @@
-                    "type": "item",
-                    "name": "minecraft:paper",
-                    "functions": [
-                        {
-                            "function": "minecraft:set_name",
-                            "name": "§3Indecipherable Treasure Map §d[SUPER RARE]"
-                        },
-                        {
-                            "function": "minecraft:set_nbt",
-                            "tag": "{display:{Lore:[\"§bIt appears to be a map of another world...\",\"§bor perhaps the author was drunk.\",\"Trade this precious booty at spawn!\"]}}"
-                        },
-                        {
-                            "function": "minecraft:set_nbt",
-                            "tag": "{Enchantments:[{id:\"minecraft:infinity\",lvl:1s}]}"
-                        }
-                    ]
+#define treasure_map(MIN,MAX) \
+    "type": "item", \
+    "name": "minecraft:paper", \
+    "functions": [ \
+        { \
+            "function": "minecraft:set_name", \
+            "name": "§3Indecipherable Treasure Map §d[SUPER RARE]" \
+        }, \
+        { \
+            "function": "minecraft:set_nbt", \
+            "tag": "{display:{Lore:[\"§bIt appears to be a map of another world...\",\"§bor perhaps the author was drunk.\",\"Trade this precious booty at spawn!\"]}}" \
+        }, \
+        { \
+            "function": "minecraft:set_nbt", \
+            "tag": "{Enchantments:[{id:\"minecraft:infinity\",lvl:1s}]}" \
+        }, \
+        { \
+            "function": "minecraft:set_count", \
+            "count": { \
+                "min": MIN, \
+                "max": MAX \
+            } \
+        } \
+    ]

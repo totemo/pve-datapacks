@@ -1,20 +1,28 @@
-                    "type": "item",
-                    "name": "minecraft:black_banner",
-                    "functions": [
-                        {
-                            "function": "minecraft:set_name",
-                            "name": "Jolly Roger §d[Super Rare]"
-                        },
-                        {
-                            "function": "minecraft:set_nbt",
-                            "tag": "{display:{Lore:[\"§8The ultimate symbol of pirate culture. \",\"Trade this precious booty at spawn!\"]}}"
-                        },
-                        {
-                            "function": "minecraft:set_nbt",
-                            "tag": "{Enchantments:[{id:\"minecraft:infinity\",lvl:1s}]}"
-                        },
-                        {
-                            "function": "minecraft:set_nbt",
-                            "tag": "{BlockEntityTag:{Patterns:[{Pattern:\"sku\",Color:0}]}}"
-                        }
-                    ]
+#define jolly_roger(MIN,MAX) \
+    "type": "item", \
+    "name": "minecraft:black_banner", \
+    "functions": [ \
+        { \
+            "function": "minecraft:set_name", \
+            "name": "Jolly Roger §d[Super Rare]" \
+        }, \
+        { \
+            "function": "minecraft:set_nbt", \
+            "tag": "{display:{Lore:[\"§8The ultimate symbol of pirate culture. \",\"Trade this precious booty at spawn!\"]}}" \
+        }, \
+        { \
+            "function": "minecraft:set_nbt", \
+            "tag": "{Enchantments:[{id:\"minecraft:infinity\",lvl:1s}]}" \
+        }, \
+        { \
+            "function": "minecraft:set_nbt", \
+            "tag": "{BlockEntityTag:{Patterns:[{Pattern:\"sku\",Color:0}]}}" \
+        }, \
+        { \
+            "function": "minecraft:set_count", \
+            "count": { \
+                "min": MIN, \
+                "max": MAX \
+            } \
+        } \
+    ]

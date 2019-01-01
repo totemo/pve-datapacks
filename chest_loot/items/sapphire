@@ -1,16 +1,24 @@
-                    "type": "item",
-                    "name": "minecraft:lapis_lazuli",
-                    "functions": [
-                        {
-                            "function": "minecraft:set_name",
-                            "name": "§9Sapphire §d[SUPER RARE]"
-                        },
-                        {
-                            "function": "minecraft:set_nbt",
-                            "tag": "{display:{Lore:[\"§3It's as if you hold an ocean\",\"§3in the palm of your hand.\",\"Trade this precious booty at spawn!\"]}}"
-                        },
-                        {
-                            "function": "minecraft:set_nbt",
-                            "tag": "{Enchantments:[{id:\"minecraft:infinity\",lvl:1s}]}"
-                        }
-                    ]
+#define sapphire(MIN,MAX) \
+    "type": "item", \
+    "name": "minecraft:lapis_lazuli", \
+    "functions": [ \
+        { \
+            "function": "minecraft:set_name", \
+            "name": "§9Sapphire §d[SUPER RARE]" \
+        }, \
+        { \
+            "function": "minecraft:set_nbt", \
+            "tag": "{display:{Lore:[\"§3It's as if you hold an ocean\",\"§3in the palm of your hand.\",\"Trade this precious booty at spawn!\"]}}" \
+        }, \
+        { \
+            "function": "minecraft:set_nbt", \
+            "tag": "{Enchantments:[{id:\"minecraft:infinity\",lvl:1s}]}" \
+        }, \
+        { \
+            "function": "minecraft:set_count", \
+            "count": { \
+                "min": MIN, \
+                "max": MAX \
+            } \
+        } \
+    ]

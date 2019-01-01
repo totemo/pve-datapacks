@@ -1,16 +1,24 @@
-                    "type": "item",
-                    "name": "minecraft:iron_nugget",
-                    "functions": [
-                        {
-                            "function": "minecraft:set_name",
-                            "name": "§7Piece of Eight §2[COMMON]"
-                        },
-                        {
-                            "function": "minecraft:set_nbt",
-                            "tag": "{display:{Lore:[\"§f8 real reales!\",\"Trade this precious booty at spawn!\"]}}"
-                        },
-                        {
-                            "function": "minecraft:set_nbt",
-                            "tag": "{Enchantments:[{id:\"minecraft:infinity\",lvl:1s}]}"
-                        }
-                    ]
+#define piece_of_eight(MIN,MAX) \
+    "type": "item", \
+    "name": "minecraft:iron_nugget", \
+    "functions": [ \
+        { \
+            "function": "minecraft:set_name", \
+            "name": "§7Piece of Eight §2[COMMON]" \
+        }, \
+        { \
+            "function": "minecraft:set_nbt", \
+            "tag": "{display:{Lore:[\"§f8 real reales!\",\"Trade this precious booty at spawn!\"]}}" \
+        }, \
+        { \
+            "function": "minecraft:set_nbt", \
+            "tag": "{Enchantments:[{id:\"minecraft:infinity\",lvl:1s}]}" \
+        }, \
+        { \
+            "function": "minecraft:set_count", \
+            "count": { \
+                "min": MIN, \
+                "max": MAX \
+            } \
+        } \
+    ]

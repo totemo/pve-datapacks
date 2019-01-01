@@ -1,16 +1,24 @@
-                    "type": "item",
-                    "name": "minecraft:emerald",
-                    "functions": [
-                        {
-                            "function": "minecraft:set_name",
-                            "name": "§aDaughter Emerald §d[SUPER RARE]"
-                        },
-                        {
-                            "function": "minecraft:set_nbt",
-                            "tag": "{display:{Lore:[\"§2The gem is small but you feel it is\",\"§2meant for something bigger. Umina is calling.\",\"Trade this precious booty at spawn!\"]}}"
-                        },
-                        {
-                            "function": "minecraft:set_nbt",
-                            "tag": "{Enchantments:[{id:\"minecraft:infinity\",lvl:1s}]}"
-                        }
-                    ]
+#define daughter_emerald(MIN,MAX) \
+    "type": "item", \
+    "name": "minecraft:emerald", \
+    "functions": [ \
+        { \
+            "function": "minecraft:set_name", \
+            "name": "§aDaughter Emerald §d[SUPER RARE]" \
+        }, \
+        { \
+            "function": "minecraft:set_nbt", \
+            "tag": "{display:{Lore:[\"§2The gem is small but you feel it is\",\"§2meant for something bigger. Umina is calling.\",\"Trade this precious booty at spawn!\"]}}" \
+        }, \
+        { \
+            "function": "minecraft:set_nbt", \
+            "tag": "{Enchantments:[{id:\"minecraft:infinity\",lvl:1s}]}" \
+        }, \
+        { \
+            "function": "minecraft:set_count", \
+            "count": { \
+                "min": MIN, \
+                "max": MAX \
+            } \
+        } \
+    ]
