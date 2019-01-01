@@ -7,7 +7,7 @@ ARCHIVE="$DIST/$PACKAGE.zip"
 GENERATE="$HERE/generate.sh"
 
 # Generate code if generate.sh present.
-[ -x "$GENERATE" ] && "$GENERATE"
+[ -x "$GENERATE" ] && "$GENERATE" || exit 1
 
 mkdir -p "$DIST"
 rm -f "$ARCHIVE"
