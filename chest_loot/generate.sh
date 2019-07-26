@@ -47,7 +47,10 @@ if [ ! -f "$DATA_DIR/minecraft/loot_tables/vanilla/chests/simple_dungeon.json" ]
         exit 1
     fi
     
-    rm -f "$VANILLA_DEST_DIR"/*.json
-    mv "$TMP_DIR/$MINECRAFT_JAR_INTERNAL_PATH"/*.json "$VANILLA_DEST_DIR"
+    find "$VANILLA_DEST_DIR" -name '*.json' -exec rm {} \;
+    mkdir -p "$VANILLA_DEST_DIR"
+    cd "$TMP_DIR/$MINECRAFT_JAR_INTERNAL_PATH"
+    cp -r * "$VANILLA_DEST_DIR"
+    rm -rf "$TMP_DIR"
 fi
 
