@@ -1,8 +1,4 @@
-#include "piece-of-eight"
-#include "ruby"
-#include "sapphire"
-#include "daughter-emerald"
-#include "treasure-map"
+#include "all-items"
 
 {
     "pools": [
@@ -19,24 +15,16 @@
             "rolls": 1,
             "entries": [
                 {
-                    piece_of_eight(0,2)
-                }
-            ]
-        },
-        {
-            "rolls": 1,
-            "entries": [
-                {
-                    ruby(0,1)
+                    unidentified_mineral(0,1)
                 },
                 {
-                    sapphire(0,1)
+                    large_rock(0,1)
                 },
                 {
-                    daughter_emerald(0,1)
+                    strange_fiber(0,1)
                 },
                 {
-                    treasure_map(0,1)
+                    thick_stalk(0,1)
                 }
             ]
         }

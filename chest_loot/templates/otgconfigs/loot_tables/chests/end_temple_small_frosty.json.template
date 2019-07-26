@@ -1,9 +1,4 @@
-#include "piece-of-eight"
-#include "ruby"
-#include "sapphire"
-#include "daughter-emerald"
-#include "pearls"
-#include "item"
+#include "all-items"
 
 {
     "pools": [
@@ -20,15 +15,7 @@
             "rolls": 1,
             "entries": [
                 {
-                    piece_of_eight(0,2)
-                }
-            ]
-        },
-        {
-            "rolls": 1,
-            "entries": [
-                {
-                    item("minecraft:shulker_shell",1,3)
+                    shulker_shell(0,3)
                 }
             ]
         },
@@ -36,16 +23,16 @@
             "rolls": 2,
             "entries": [
                 {
-                    ruby(1,1)
+                    unidentified_mineral(0,1)
                 },
                 {
-                    sapphire(1,1)
+                    unusual_crystal(0,1)
                 },
                 {
-                    daughter_emerald(1,1)
+                    shiny_gems(0,1)
                 },
                 {
-                    pearls(1,1)
+                    pebbles(0,1)
                 }
             ]
         }

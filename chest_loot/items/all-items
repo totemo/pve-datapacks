@@ -1,0 +1,117 @@
+#define item(TYPE,MIN,MAX) \
+    "type": "item", \
+    "name": TYPE, \
+    "functions" : [ \
+        { \
+            "function": "minecraft:set_count", \
+            "count": { \
+                "min": 1, \
+                "max": 3 \
+            } \
+        } \
+    ]
+
+#define custom_item(NAME,MATERIAL,MIN,MAX) \
+    "type": "item", \
+    "name": MATERIAL, \
+    "functions": [ \
+        { \
+            "function": "minecraft:set_name", \
+            "name": NAME \
+        }, \
+        { \
+            "function": "minecraft:set_nbt", \
+            "tag": "{display:{Lore:[\"§cReturn this sample to the\",\"§cship's lab for analysis.\"]}}" \
+        }, \
+        { \
+            "function": "minecraft:set_nbt", \
+            "tag": "{Enchantments:[{id:\"minecraft:durability\",lvl:1s}]}" \
+        }, \
+        { \
+            "function": "minecraft:set_count", \
+            "count": { \
+                "min": MIN, \
+                "max": MAX \
+            } \
+        } \
+    ]
+
+#define unidentified_mineral(MIN,MAX) \
+    custom_item("§6Unidentified Mineral","minecraft:gold_nugget",MIN,MAX)
+
+#define shimmering_dust(MIN,MAX) \
+    custom_item("§4Shimmering Dust","minecraft:redstone",MIN,MAX)
+
+#define unusual_crystal(MIN,MAX) \
+    custom_item("§bUnusual Crystal","minecraft:quartz",MIN,MAX)
+
+#define shiny_gems(MIN,MAX) \
+    custom_item("§bShiny Gems","minecraft:prismarine_crystals",MIN,MAX)
+
+#define pebbles(MIN,MAX) \
+    custom_item("§8Pebbles","minecraft:melon_seeds",MIN,MAX)
+
+#define large_rock(MIN,MAX) \
+    custom_item("§5Large Rock","minecraft:charcoal",MIN,MAX)
+
+#define fleshy_gunk(MIN,MAX) \
+    custom_item("§fFleshy Gunk","minecraft:phantom_membrane",MIN,MAX)
+
+#define sticky_goo(MIN,MAX) \
+    custom_item("§aSticky Goo","minecraft:slime_ball",MIN,MAX)
+
+#define skeletal_remains(MIN,MAX) \
+    custom_item("§fSkeletal Remains","minecraft:bone",MIN,MAX)
+
+#define strange_fiber(MIN,MAX) \
+    custom_item("§dStrange Fiber","minecraft:string",MIN,MAX)
+
+#define blood_sample(MIN,MAX) \
+    custom_item("§4Blood Sample","minecraft:red_dye",MIN,MAX)
+
+#define animal_hide(MIN,MAX) \
+    custom_item("§8Animal Hide","minecraft:rabbit_hide",MIN,MAX)
+
+#define fish_scales(MIN,MAX) \
+    custom_item("§9Fish Scales","minecraft:beetroot_seeds",MIN,MAX)
+
+#define marine_specimen(MIN,MAX) \
+    custom_item("§bMarine Specimen","minecraft:ink_sac",MIN,MAX)
+
+#define tough_horn(MIN,MAX) \
+    custom_item("§4Tough Horn","minecraft:lever",MIN,MAX)
+
+#define thick_stalk(MIN,MAX) \
+    custom_item("§2Thick Stalk","minecraft:bamboo",MIN,MAX)
+
+#define meaty_fungi(MIN,MAX) \
+    custom_item("§8Meaty Fungi","minecraft:brown_mushroom",MIN,MAX)
+
+#define shulker_shell(MIN,MAX) \
+    item("minecraft:shulker_shell",MIN,MAX)
+
+#define heart_fragment(MIN,MAX) \
+    "type": "item", \
+    "name": "minecraft:cyan_dye", \
+    "functions": [ \
+        { \
+            "function": "minecraft:set_name", \
+            "name": "§3Glistening Heart Fragment" \
+        }, \
+        { \
+            "function": "minecraft:set_nbt", \
+            "tag": "{display:{Lore:[\"§bLooks to be about an eighth of a Heart of the Sea.\"]}}" \
+        }, \
+        { \
+            "function": "minecraft:set_nbt", \
+            "tag": "{Enchantments:[{id:\"minecraft:infinity\",lvl:1s}]}" \
+        }, \
+        { \
+            "function": "minecraft:set_count", \
+            "count": { \
+                "min": MIN, \
+                "max": MAX \
+            } \
+        } \
+    ]
+

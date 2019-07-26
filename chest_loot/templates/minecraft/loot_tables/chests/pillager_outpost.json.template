@@ -7,7 +7,7 @@
             "entries": [
                 {
                     "type": "loot_table",
-                    "name": "minecraft:vanilla/chests/underwater_ruin_big"
+                    "name": "minecraft:vanilla/chests/pillager_outpost"
                 }
             ]
         },
@@ -18,14 +18,16 @@
                     shiny_gems(0,1)
                 },
                 {
-                    fish_scales(0,1)
+                    fleshy_gunk(0,1)
                 },
                 {
-                    marine_specimen(0,1)
+                    skeletal_remains(0,1)
                 },
                 {
-                    "weight": 3,
-                    heart_fragment(0,1)
+                    blood_sample(0,1)
+                },
+                {
+                    tough_horn(0,1)
                 }
             ]
         }

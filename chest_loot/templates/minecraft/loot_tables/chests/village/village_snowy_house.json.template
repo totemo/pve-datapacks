@@ -7,25 +7,27 @@
             "entries": [
                 {
                     "type": "loot_table",
-                    "name": "minecraft:vanilla/chests/underwater_ruin_big"
+                    "name": "minecraft:vanilla/chests/village/village_snowy_house"
                 }
             ]
         },
         {
-            "rolls": 2,
+            "rolls": 1,
             "entries": [
                 {
-                    shiny_gems(0,1)
+                    shimmering_dust(0,1)
                 },
                 {
-                    fish_scales(0,1)
+                    fleshy_gunk(0,1)
                 },
                 {
-                    marine_specimen(0,1)
+                    animal_hide(0,1)
                 },
                 {
-                    "weight": 3,
-                    heart_fragment(0,1)
+                    thick_stalk(0,1)
+                },
+                {
+                    meaty_fungi(0,1)
                 }
             ]
         }

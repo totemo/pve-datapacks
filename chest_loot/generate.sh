@@ -12,19 +12,6 @@ TEMPLATES_DIR="$BASE_DIR/templates"
 DATA_DIR="$BASE_DIR/src/data"
 
 #------------------------------------------------------------------------------
-
-for FILE in $(cd templates && find . -name '*.template' | sort); do
-    T="${FILE##./}"
-    mkdir -p "$DATA_DIR"
-    JSON="${T%%.template}"
-    echo GENERATING "src/data/$JSON"
-    if ! cpp -P -I"$ITEMS_DIR" < "$TEMPLATES_DIR/$T" | jq . --indent 4 > "$DATA_DIR/$JSON"; then
-        echo >&2 "ERROR processing template inclusions."
-        exit 1
-    fi
-done
-
-#------------------------------------------------------------------------------
 # Include vanilla minecraft loot tables, renamed to:
 # "minecraft:vanilla/chests/<name>.json" so that they can be referenced by
 # custom replacements in the "minecraft:" and "otgconfigs:" namespaces.
@@ -53,4 +40,20 @@ if [ ! -f "$DATA_DIR/minecraft/loot_tables/vanilla/chests/simple_dungeon.json" ]
     cp -r * "$VANILLA_DEST_DIR"
     rm -rf "$TMP_DIR"
 fi
+
+#------------------------------------------------------------------------------
+# Hack. TODO: make this automatic. 
+mkdir -p "$DATA_DIR/minecraft/loot_tables/vanilla/chests/village"
+
+for FILE in $(cd "$BASE_DIR/templates" && find . -name '*.template' | sort); do
+    T="${FILE##./}"
+    mkdir -p "$DATA_DIR"
+    JSON="${T%%.template}"
+    echo GENERATING "src/data/$JSON"
+    if ! cpp -P -I"$ITEMS_DIR" < "$TEMPLATES_DIR/$T" | jq . --indent 4 > "$DATA_DIR/$JSON"; then
+        echo >&2 "ERROR processing template inclusions."
+        exit 1
+    fi
+done
+
 

@@ -1,6 +1,4 @@
-#include "piece-of-eight"
-#include "rum"
-#include "treasure-map"
+#include "all-items"
 
 {
     "pools": [
@@ -17,18 +15,13 @@
             "rolls": 1,
             "entries": [
                 {
-                    piece_of_eight(0,3)
-                }
-            ]
-        },
-        {
-            "rolls": 1,
-            "entries": [
-                {
-                    rum(0,1)
+                    unusual_crystal(0,2)
                 },
                 {
-                    treasure_map(0,1)
+                    pebbles(0,2)
+                },
+                {
+                    skeletal_remains(0,3)
                 }
             ]
         }
