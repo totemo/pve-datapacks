@@ -20,12 +20,15 @@
             "name": NAME \
         }, \
         { \
-            "function": "minecraft:set_nbt", \
-            "tag": "{display:{Lore:[\"§cReturn this sample to the\",\"§cship's lab for analysis.\"]}}" \
+            "function": "minecraft:set_lore", \
+            "lore": [ \
+                [{"text": "§cReturn this sample to the"}], \
+                [{"text": "§cship's lab for analysis."}] \
+            ] \
         }, \
         { \
             "function": "minecraft:set_nbt", \
-            "tag": "{Enchantments:[{id:\"minecraft:durability\",lvl:1s}]}" \
+            "tag": "{Enchantments:[{id:\"minecraft:unbreaking\",lvl:1s}]}" \
         }, \
         { \
             "function": "minecraft:set_count", \
@@ -99,8 +102,10 @@
             "name": "§3Glistening Heart Fragment" \
         }, \
         { \
-            "function": "minecraft:set_nbt", \
-            "tag": "{display:{Lore:[\"§bLooks to be about an eighth of a Heart of the Sea.\"]}}" \
+            "function": "minecraft:set_lore", \
+            "lore": [ \
+                [{"text": "§bLooks to be about an eighth of a Heart of the Sea."}] \
+            ] \
         }, \
         { \
             "function": "minecraft:set_nbt", \
