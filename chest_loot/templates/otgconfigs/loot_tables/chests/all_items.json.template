@@ -1,0 +1,82 @@
+#include "all-items"
+
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [{ unidentified_mineral(1,1) }]
+        },
+        {
+            "rolls": 1,
+            "entries": [{ shimmering_dust(1,1) }]
+        },
+        {
+            "rolls": 1,
+            "entries": [{ unusual_crystal(1,1) }]
+        },
+        {
+            "rolls": 1,
+            "entries": [{ shiny_gems(1,1) }]
+        },
+        {
+            "rolls": 1,
+            "entries": [{ pebbles(1,1) }]
+        },
+        {
+            "rolls": 1,
+            "entries": [{ large_rock(1,1) }]
+        },
+        {
+            "rolls": 1,
+            "entries": [{ fleshy_gunk(1,1) }]
+        },
+        {
+            "rolls": 1,
+            "entries": [{ sticky_goo(1,1) }]
+        },
+        {
+            "rolls": 1,
+            "entries": [{ skeletal_remains(1,1) }]
+        },
+        {
+            "rolls": 1,
+            "entries": [{ strange_fiber(1,1) }]
+        },
+        {
+            "rolls": 1,
+            "entries": [{ blood_sample(1,1) }]
+        },
+        {
+            "rolls": 1,
+            "entries": [{ animal_hide(1,1) }]
+        },
+        {
+            "rolls": 1,
+            "entries": [{ fish_scales(1,1) }]
+        },
+        {
+            "rolls": 1,
+            "entries": [{ marine_specimen(1,1) }]
+        },
+        {
+            "rolls": 1,
+            "entries": [{ tough_horn(1,1) }]
+        },
+        {
+            "rolls": 1,
+            "entries": [{ thick_stalk(1,1) }]
+        },
+        {
+            "rolls": 1,
+            "entries": [{ meaty_fungi(1,1) }]
+        },
+        {
+            "rolls": 1,
+            "entries": [{ shulker_shell(1,1) }]
+        },
+        {
+            "rolls": 1,
+            "entries": [{ heart_fragment(1,1) }]
+        }
+    ]
+}
