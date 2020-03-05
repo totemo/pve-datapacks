@@ -15,19 +15,18 @@
             "rolls": 1,
             "entries": [
                 {
-                    shimmering_dust(0,1)
+                    snow_globe(0,1)
                 },
                 {
-                    fleshy_gunk(0,1)
+                    "weight": 2,
+                    collectors_spoon(0,1)
                 },
                 {
-                    animal_hide(0,1)
+                    walking_stick(0,1)
                 },
                 {
-                    thick_stalk(0,1)
-                },
-                {
-                    meaty_fungi(0,1)
+                    "weight": 2,
+                    iron_golem_soul(0,2)
                 }
             ]
         }

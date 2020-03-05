@@ -11,7 +11,7 @@
         } \
     ]
 
-#define custom_item(NAME,MATERIAL,MIN,MAX) \
+#define custom_item(NAME,MATERIAL,LORE,ENCHANTMENT,MIN,MAX) \
     "type": "item", \
     "name": MATERIAL, \
     "functions": [ \
@@ -21,14 +21,11 @@
         }, \
         { \
             "function": "minecraft:set_lore", \
-            "lore": [ \
-                [{"text": "§cReturn this sample to the"}], \
-                [{"text": "§cship's lab for analysis."}] \
-            ] \
+            LORE \
         }, \
         { \
             "function": "minecraft:set_nbt", \
-            "tag": "{Enchantments:[{id:\"minecraft:unbreaking\",lvl:1s}]}" \
+            "tag": ENCHANTMENT \
         }, \
         { \
             "function": "minecraft:set_count", \
@@ -39,84 +36,79 @@
         } \
     ]
 
-#define unidentified_mineral(MIN,MAX) \
-    custom_item("§6Unidentified Mineral","minecraft:gold_nugget",MIN,MAX)
+#define LORE1(LINE1) \
+    "lore": [ \
+        [{"text": LINE1}] \
+    ]
 
-#define shimmering_dust(MIN,MAX) \
-    custom_item("§4Shimmering Dust","minecraft:redstone",MIN,MAX)
+#define LORE2(LINE1,LINE2) \
+    "lore": [ \
+        [{"text": LINE1}], \
+        [{"text": LINE2}] \
+    ]
 
-#define unusual_crystal(MIN,MAX) \
-    custom_item("§bUnusual Crystal","minecraft:quartz",MIN,MAX)
+#define LORE3(LINE1,LINE2,LINE3) \
+    "lore": [ \
+        [{"text": LINE1}], \
+        [{"text": LINE2}], \
+        [{"text": LINE3}] \
+    ]
 
-#define shiny_gems(MIN,MAX) \
-    custom_item("§bShiny Gems","minecraft:prismarine_crystals",MIN,MAX)
 
-#define pebbles(MIN,MAX) \
-    custom_item("§8Pebbles","minecraft:melon_seeds",MIN,MAX)
+#define INFINITY_1   "{Enchantments:[{id:\"minecraft:infinity\",lvl:1s}]}"
+#define UNBREAKING_1 "{Enchantments:[{id:\"minecraft:unbreaking\",lvl:1s}]}"
+#define SOUVENIR_LORE \
+    LORE3("§3A lost souvenir!", \
+          "§eReturn to the Lost & Found", \
+          "§eat the Corner Store")
 
-#define large_rock(MIN,MAX) \
-    custom_item("§5Large Rock","minecraft:charcoal",MIN,MAX)
+#define souvenir(NAME,MATERIAL,MIN,MAX) \
+    custom_item(NAME,MATERIAL,SOUVENIR_LORE,UNBREAKING_1,MIN,MAX)
 
-#define fleshy_gunk(MIN,MAX) \
-    custom_item("§fFleshy Gunk","minecraft:phantom_membrane",MIN,MAX)
 
-#define sticky_goo(MIN,MAX) \
-    custom_item("§aSticky Goo","minecraft:slime_ball",MIN,MAX)
+#define souvenir_photo(MIN,MAX) \
+    souvenir("§cSouvenir Photograph","minecraft:paper",MIN,MAX)
 
-#define skeletal_remains(MIN,MAX) \
-    custom_item("§fSkeletal Remains","minecraft:bone",MIN,MAX)
+#define snow_globe(MIN,MAX) \
+    souvenir("§bSnow Globe","minecraft:glass_bottle",MIN,MAX)
 
-#define strange_fiber(MIN,MAX) \
-    custom_item("§dStrange Fiber","minecraft:string",MIN,MAX)
+#define bottle_opener(MIN,MAX) \
+    souvenir("§9Bottle Opener","minecraft:tripwire_hook",MIN,MAX)
 
-#define blood_sample(MIN,MAX) \
-    custom_item("§4Blood Sample","minecraft:red_dye",MIN,MAX)
+#define shot_glass(MIN,MAX) \
+    souvenir("§2Decorative Shot Glass","minecraft:flower_pot",MIN,MAX)
 
-#define animal_hide(MIN,MAX) \
-    custom_item("§8Animal Hide","minecraft:rabbit_hide",MIN,MAX)
+#define fools_gold(MIN,MAX) \
+    souvenir("§6Fool's Gold","minecraft:glowstone_dust",MIN,MAX)
 
-#define fish_scales(MIN,MAX) \
-    custom_item("§9Fish Scales","minecraft:beetroot_seeds",MIN,MAX)
+#define souvenir_keychain(MIN,MAX) \
+    souvenir("§4Souviner Key Ring","minecraft:name_tag",MIN,MAX)
 
-#define marine_specimen(MIN,MAX) \
-    custom_item("§bMarine Specimen","minecraft:ink_sac",MIN,MAX)
+#define collectors_spoon(MIN,MAX) \
+    souvenir("§5Collectible Spoon","minecraft:lever",MIN,MAX)
 
-#define tough_horn(MIN,MAX) \
-    custom_item("§4Tough Horn","minecraft:lever",MIN,MAX)
+#define polished_stones(MIN,MAX) \
+    souvenir("§6Polished Stones","minecraft:beetroot_seeds",MIN,MAX)
 
-#define thick_stalk(MIN,MAX) \
-    custom_item("§2Thick Stalk","minecraft:bamboo",MIN,MAX)
+#define walking_stick(MIN,MAX) \
+    souvenir("§7Walking Stick","minecraft:stick",MIN,MAX)
 
-#define meaty_fungi(MIN,MAX) \
-    custom_item("§8Meaty Fungi","minecraft:brown_mushroom",MIN,MAX)
+#define magnet(MIN,MAX) \
+    souvenir("§eMagnet","minecraft:sunflower",MIN,MAX)
 
-#define shulker_shell(MIN,MAX) \
-    item("minecraft:shulker_shell",MIN,MAX)
+#define bumper_sticker(MIN,MAX) \
+    souvenir("§aBumper Sticker","minecraft:nether_brick",MIN,MAX)
+
+#define arrow_head(MIN,MAX) \
+    souvenir("§bArrowhead","minecraft:prismarine_shard",MIN,MAX)
+
+
+#define nerdcoin(MIN,MAX) \
+    custom_item("§6NerdCoin","minecraft:honeycomb",LORE2("§3Used to purchase","§3items from spawn traders."),INFINITY_1,MIN,MAX)
 
 #define heart_fragment(MIN,MAX) \
-    "type": "item", \
-    "name": "minecraft:cyan_dye", \
-    "functions": [ \
-        { \
-            "function": "minecraft:set_name", \
-            "name": "§3Glistening Heart Fragment" \
-        }, \
-        { \
-            "function": "minecraft:set_lore", \
-            "lore": [ \
-                [{"text": "§bLooks to be about an eighth of a Heart of the Sea."}] \
-            ] \
-        }, \
-        { \
-            "function": "minecraft:set_nbt", \
-            "tag": "{Enchantments:[{id:\"minecraft:infinity\",lvl:1s}]}" \
-        }, \
-        { \
-            "function": "minecraft:set_count", \
-            "count": { \
-                "min": MIN, \
-                "max": MAX \
-            } \
-        } \
-    ]
+    custom_item("§3Glistening Heart Fragment","minecraft:cyan_dye",LORE1("§bLooks to be about an eighth of a Heart of the Sea."),INFINITY_1,MIN,MAX)
+
+#define iron_golem_soul(MIN,MAX) \
+    custom_item("§3Golem Soul","minecraft:iron_nugget",LORE2("§oRequired as part of the","§ocost of a golem spawner."),INFINITY_1,MIN,MAX)
 

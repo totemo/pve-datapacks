@@ -15,31 +15,18 @@
             "rolls": 1,
             "entries": [
                 {
-                    unidentified_mineral(0,1)
+                    "weight": 2,
+                    shot_glass(0,1)
                 },
                 {
-                    shimmering_dust(0,1)
+                    souvenir_keychain(0,2)
                 },
                 {
-                    pebbles(0,1)
+                    "weight": 2,
+                    walking_stick(0,1)
                 },
                 {
-                    large_rock(0,1)
-                },
-                {
-                    large_rock(0,1)
-                },
-                {
-                    skeletal_remains(0,1)
-                },
-                {
-                    strange_fiber(0,1)
-                },
-                {
-                    blood_sample(0,1)
-                },
-                {
-                    meaty_fungi(0,1)
+                    iron_golem_soul(0,1)
                 }
             ]
         }

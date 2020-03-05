@@ -12,27 +12,21 @@
             ]
         },
         {
-            "rolls": 1,
-            "entries": [
-                {
-                    shulker_shell(0,3)
-                }
-            ]
-        },
-        {
             "rolls": 2,
             "entries": [
                 {
-                    unidentified_mineral(0,1)
+                    bottle_opener(0,1)
                 },
                 {
-                    unusual_crystal(0,1)
+                    "weight": 2,
+                    polished_stones(0,2)
                 },
                 {
-                    shiny_gems(0,1)
+                    "weight": 2,
+                    bumper_sticker(0,1)
                 },
                 {
-                    pebbles(0,1)
+                    nerdcoin(0,1)
                 }
             ]
         }

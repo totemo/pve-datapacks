@@ -15,19 +15,18 @@
             "rolls": 2,
             "entries": [
                 {
-                    shiny_gems(0,1)
+                    "weight": 2,
+                    shot_glass(0,1)
                 },
                 {
-                    fleshy_gunk(0,1)
+                    souvenir_keychain(0,1)
                 },
                 {
-                    skeletal_remains(0,1)
+                    arrow_head(0,1)
                 },
                 {
-                    blood_sample(0,1)
-                },
-                {
-                    tough_horn(0,1)
+                    "weight": 2,
+                    iron_golem_soul(0,2)
                 }
             ]
         }

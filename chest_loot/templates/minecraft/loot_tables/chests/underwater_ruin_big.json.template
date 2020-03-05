@@ -15,17 +15,18 @@
             "rolls": 2,
             "entries": [
                 {
-                    shiny_gems(0,1)
+                    "weight": 2,
+                    bottle_opener(0,1)
                 },
                 {
-                    fish_scales(0,1)
+                    collectors_spoon(0,1)
                 },
                 {
-                    marine_specimen(0,1)
+                    bumper_sticker(0,1)
                 },
                 {
-                    "weight": 3,
-                    heart_fragment(0,1)
+                    "weight": 2,
+                    heart_fragment(0,2)
                 }
             ]
         }
