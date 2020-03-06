@@ -110,7 +110,7 @@ cd chest_loot
    * The command will vary depending on the server name and directory.
    * If the preprocessor spouts errors, fix your macros.
    * If `jq` complains of malformed JSON, you will need to temporarily remove `| jq . --indent 4` in order to see the raw preprocessor output that `jq` is being asked to format. The file containing the malformed text will be the last one before the error message, in the `src/` directory.
-   > *NOTE: the `src/` directory contains the output of `generate.sh`, which is then packed into a ZIP file to make the datapack. It is the source code of the datapack. However, the input of `generate.sh` is in the `templates/` directory.
+   > *NOTE: the `src/` directory contains the output of `generate.sh`, which is then packed into a ZIP file to make the datapack. It is the source code of the datapack. However, the input of `generate.sh` is in the `templates/` directory.*
  
 
 Checking Items
