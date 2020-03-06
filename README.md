@@ -94,7 +94,7 @@ cd chest_loot
  1. Label each group with a letter, starting with `a`. The custom item drops for the group will be represented by a single pool, represented as a preprocessor macro in a text file in the `chest_loot/pools/` subdirectory. Currently there are pools `a` through `i`.
  1. Design the the drops for each group and write the corresponding pool macros, e.g. `#define POOL_A` in `chest_loot/pools/a`.
  1. For each `otgconfigs:` namespaced loot table, decide which vanilla loot table it should be based on. Loot tables that override vanilla `minecraft:` namespaced tables will simply inherit the vanilla loot table and add an extra pool for the custom drops.
- 1. Using BeastMaster's `config.yml` as the definitive source on item properties.
+ 1. Using BeastMaster's `config.yml` as the definitive source on item properties:
    * Check for mistyped lore strings on items:
 ```
 grep -A3 lore: config.yml | sort -u
@@ -134,7 +134,7 @@ Checking Loot Tables
 When verifying loot tables, there are two points to consider:
 
  1. Does the table include the correct inherited vanilla loot?
- 2. Does the table include the right additional custom items for its pool/group.
+ 2. Does the table include the right additional custom items for its pool/group?
 
 To check Point 1, you need to create at least one chest for each loot table type. To check Point 2, you want to see a few examples of custom loot from the same group.
 
