@@ -1,34 +1,9 @@
-#include "all-items"
+#include "items/all-items"
+#include "pools/a"
 
 {
     "pools": [
-        {
-            "rolls": 1,
-            "entries": [
-                {
-                    "type": "loot_table",
-                    "name": "minecraft:vanilla/chests/stronghold_library"
-                }
-            ]
-        },
-        {
-            "rolls": 1,
-            "entries": [
-                {
-                    souvenir_photo(0,2)
-                },
-                {
-                    "weight": 2,
-                    fools_gold(0,2)
-                },
-                {
-                    "weight": 2,
-                    magnet(0,2)
-                },
-                {
-                    nerdcoin(0,1)
-                }
-            ]
-        }
+        TABLE("minecraft:vanilla/chests/stronghold_library"),
+        POOL_A
     ]
 }

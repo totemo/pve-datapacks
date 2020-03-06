@@ -1,0 +1,22 @@
+#include "pools/table"
+
+#define POOL_I \
+    { \
+        "rolls": 2, \
+        "entries": [ \
+            { \
+                souvenir_photo(0,1) \
+            }, \
+            { \
+                "weight": 2, \
+                polished_stones(0,2) \
+            }, \
+            { \
+                "weight": 2, \
+                magnet(0,1) \
+            }, \
+            { \
+                nerdcoin(0,1) \
+            } \
+        ] \
+    }

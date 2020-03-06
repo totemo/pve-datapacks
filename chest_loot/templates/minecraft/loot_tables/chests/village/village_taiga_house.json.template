@@ -1,34 +1,9 @@
-#include "all-items"
+#include "items/all-items"
+#include "pools/g"
 
 {
     "pools": [
-        {
-            "rolls": 1,
-            "entries": [
-                {
-                    "type": "loot_table",
-                    "name": "minecraft:vanilla/chests/village/village_taiga_house"
-                }
-            ]
-        },
-        {
-            "rolls": 1,
-            "entries": [
-                {
-                    snow_globe(0,1)
-                },
-                {
-                    "weight": 2,
-                    collectors_spoon(0,1)
-                },
-                {
-                    walking_stick(0,1)
-                },
-                {
-                    "weight": 2,
-                    iron_golem_soul(0,2)
-                }
-            ]
-        }
+        TABLE("minecraft:vanilla/chests/village/village_taiga_house"),
+        POOL_G
     ]
 }

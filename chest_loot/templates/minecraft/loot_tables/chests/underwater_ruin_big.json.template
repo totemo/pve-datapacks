@@ -1,34 +1,9 @@
-#include "all-items"
+#include "items/all-items"
+#include "pools/b"
 
 {
     "pools": [
-        {
-            "rolls": 1,
-            "entries": [
-                {
-                    "type": "loot_table",
-                    "name": "minecraft:vanilla/chests/underwater_ruin_big"
-                }
-            ]
-        },
-        {
-            "rolls": 2,
-            "entries": [
-                {
-                    "weight": 2,
-                    bottle_opener(0,1)
-                },
-                {
-                    collectors_spoon(0,1)
-                },
-                {
-                    bumper_sticker(0,1)
-                },
-                {
-                    "weight": 2,
-                    heart_fragment(0,2)
-                }
-            ]
-        }
+        TABLE("minecraft:vanilla/chests/underwater_ruin_big"),
+        POOL_B
     ]
 }

@@ -1,34 +1,9 @@
-#include "all-items"
+#include "items/all-items"
+#include "pools/e"
 
 {
     "pools": [
-        {
-            "rolls": 1,
-            "entries": [
-                {
-                    "type": "loot_table",
-                    "name": "minecraft:vanilla/chests/desert_pyramid"
-                }
-            ]
-        },
-        {
-            "rolls": 1,
-            "entries": [
-                {
-                    "weight": 2,
-                    souvenir_photo(0,1)
-                },
-                {
-                    "weight": 2,
-                    souvenir_keychain(0,1)
-                },
-                {
-                    arrow_head(0,1)
-                },
-                {
-                    nerdcoin(0,1)
-                }
-            ]
-        }
+        TABLE("minecraft:vanilla/chests/desert_pyramid"),
+        POOL_E
     ]
 }

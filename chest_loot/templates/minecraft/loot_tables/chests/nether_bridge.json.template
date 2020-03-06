@@ -1,4 +1,4 @@
-#include "all-items"
+#include "items/all-items"
 
 {
     "pools": [

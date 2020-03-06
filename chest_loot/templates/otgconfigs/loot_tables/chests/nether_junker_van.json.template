@@ -1,34 +1,9 @@
-#include "all-items"
+#include "items/all-items"
+#include "pools/i"
 
 {
     "pools": [
-        {
-            "rolls": 1,
-            "entries": [
-                {
-                    "type": "loot_table",
-                    "name": "minecraft:vanilla/chests/nether_bridge"
-                }
-            ]
-        },
-        {
-            "rolls": 2,
-            "entries": [
-                {
-                    souvenir_photo(0,1)
-                },
-                {
-                    "weight": 2,
-                    polished_stones(0,2)
-                },
-                {
-                    "weight": 2,
-                    magnet(0,1)
-                },
-                {
-                    nerdcoin(0,1)
-                }
-            ]
-        }
+        TABLE("minecraft:vanilla/chests/nether_bridge"),
+        POOL_I
     ]
 }

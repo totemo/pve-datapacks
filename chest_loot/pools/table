@@ -1,0 +1,15 @@
+#ifndef __POOLS_TABLE__
+#define __POOLS_TABLE__
+
+#define TABLE(BASE_TABLE) \
+    { \
+        "rolls": 1, \
+        "entries": [ \
+            { \
+                "type": "loot_table", \
+                "name": BASE_TABLE \
+            } \
+        ] \
+    }
+
+#endif

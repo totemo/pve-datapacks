@@ -1,0 +1,22 @@
+#include "pools/table"
+
+#define POOL_E \
+    { \
+        "rolls": 1, \
+        "entries": [ \
+            { \
+                "weight": 2, \
+                souvenir_photo(0,1) \
+            }, \
+            { \
+                "weight": 2, \
+                souvenir_keychain(0,1) \
+            }, \
+            { \
+                arrow_head(0,1) \
+            }, \
+            { \
+                nerdcoin(0,1) \
+            } \
+        ] \
+    }

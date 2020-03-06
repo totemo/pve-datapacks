@@ -1,0 +1,22 @@
+#include "pools/table"
+
+#define POOL_D \
+    { \
+        "rolls": 2, \
+        "entries": [ \
+            { \
+                "weight": 2, \
+                snow_globe(0,1) \
+            }, \
+            { \
+                fools_gold(0,2) \
+            }, \
+            { \
+                magnet(0,1) \
+            }, \
+            { \
+                "weight": 2, \
+                heart_fragment(0,2) \
+            } \
+        ] \
+    }

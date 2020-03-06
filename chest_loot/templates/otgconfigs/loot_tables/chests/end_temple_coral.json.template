@@ -1,34 +1,9 @@
-#include "all-items"
+#include "items/all-items"
+#include "pools/f"
 
 {
     "pools": [
-        {
-            "rolls": 1,
-            "entries": [
-                {
-                    "type": "loot_table",
-                    "name": "minecraft:vanilla/chests/shipwreck_treasure"
-                }
-            ]
-        },
-        {
-            "rolls": 2,
-            "entries": [
-                {
-                    bottle_opener(0,1)
-                },
-                {
-                    "weight": 2,
-                    polished_stones(0,2)
-                },
-                {
-                    "weight": 2,
-                    bumper_sticker(0,1)
-                },
-                {
-                    nerdcoin(0,1)
-                }
-            ]
-        }
+        TABLE("minecraft:vanilla/chests/shipwreck_treasure"),
+        POOL_F
     ]
 }

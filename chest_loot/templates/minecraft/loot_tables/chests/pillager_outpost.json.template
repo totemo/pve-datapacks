@@ -1,34 +1,9 @@
-#include "all-items"
+#include "items/all-items"
+#include "pools/h"
 
 {
     "pools": [
-        {
-            "rolls": 1,
-            "entries": [
-                {
-                    "type": "loot_table",
-                    "name": "minecraft:vanilla/chests/pillager_outpost"
-                }
-            ]
-        },
-        {
-            "rolls": 2,
-            "entries": [
-                {
-                    "weight": 2,
-                    shot_glass(0,1)
-                },
-                {
-                    souvenir_keychain(0,1)
-                },
-                {
-                    arrow_head(0,1)
-                },
-                {
-                    "weight": 2,
-                    iron_golem_soul(0,2)
-                }
-            ]
-        }
+        TABLE("minecraft:vanilla/chests/pillager_outpost"),
+        POOL_H
     ]
 }

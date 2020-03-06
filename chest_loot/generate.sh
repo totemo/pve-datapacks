@@ -2,12 +2,11 @@
 #------------------------------------------------------------------------------
 # Write template files ending in '.template' in the templates/ directory
 # to the correspondly nameed file under the src/ directory, without the
-# .template suffix, processing textual inclusions from the items/ directory
-# using the C pre-processor, CPP (GNU variant).
+# .template suffix, processing textual inclusions from the items/ and pools/
+# subdirectories using the C pre-processor, CPP (GNU variant).
 #------------------------------------------------------------------------------
 
 BASE_DIR=$(cd $(dirname "$0") && pwd)
-ITEMS_DIR="$BASE_DIR/items"
 TEMPLATES_DIR="$BASE_DIR/templates"
 DATA_DIR="$BASE_DIR/src/data"
 
@@ -50,7 +49,7 @@ for FILE in $(cd "$BASE_DIR/templates" && find . -name '*.template' | sort); do
     mkdir -p "$DATA_DIR"
     JSON="${T%%.template}"
     echo GENERATING "src/data/$JSON"
-    if ! cpp -P -I"$ITEMS_DIR" < "$TEMPLATES_DIR/$T" | jq . --indent 4 > "$DATA_DIR/$JSON"; then
+    if ! cpp -P -I"$BASE_DIR" < "$TEMPLATES_DIR/$T" | jq . --indent 4 > "$DATA_DIR/$JSON"; then
         echo >&2 "ERROR processing template inclusions."
         exit 1
     fi
