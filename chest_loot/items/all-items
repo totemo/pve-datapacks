@@ -82,7 +82,7 @@
     souvenir("§6Fool's Gold","minecraft:glowstone_dust",MIN,MAX)
 
 #define souvenir_keychain(MIN,MAX) \
-    souvenir("§4Souviner Key Ring","minecraft:name_tag",MIN,MAX)
+    souvenir("§4Souvenir Key Ring","minecraft:name_tag",MIN,MAX)
 
 #define collectors_spoon(MIN,MAX) \
     souvenir("§5Collectible Spoon","minecraft:lever",MIN,MAX)
