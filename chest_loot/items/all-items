@@ -1,6 +1,6 @@
-#define item(TYPE,MIN,MAX) \
+#define item(MATERIAL,MIN,MAX) \
     "type": "item", \
-    "name": TYPE, \
+    "name": MATERIAL, \
     "functions" : [ \
         { \
             "function": "minecraft:set_count", \
@@ -11,7 +11,7 @@
         } \
     ]
 
-#define custom_item(NAME,MATERIAL,LORE,ENCHANTMENT,MIN,MAX) \
+#define custom_item(NAME,MATERIAL,LORE,NBT,MIN,MAX) \
     "type": "item", \
     "name": MATERIAL, \
     "functions": [ \
@@ -25,7 +25,7 @@
         }, \
         { \
             "function": "minecraft:set_nbt", \
-            "tag": ENCHANTMENT \
+            "tag": NBT \
         }, \
         { \
             "function": "minecraft:set_count", \
@@ -36,79 +36,165 @@
         } \
     ]
 
-#define LORE1(LINE1) \
-    "lore": [ \
-        [{"text": LINE1}] \
+#define custom_item2(NAME,MATERIAL,LORE,NBT,NBT2,MIN,MAX) \
+    "type": "item", \
+    "name": MATERIAL, \
+    "functions": [ \
+        { \
+            "function": "minecraft:set_name", \
+            "name": NAME \
+        }, \
+        { \
+            "function": "minecraft:set_lore", \
+            LORE \
+        }, \
+        { \
+            "function": "minecraft:set_nbt", \
+            "tag": NBT \
+        }, \
+        { \
+            "function": "minecraft:set_nbt", \
+            "tag": NBT2 \
+        }, \
+        { \
+            "function": "minecraft:set_count", \
+            "count": { \
+                "min": MIN, \
+                "max": MAX \
+            } \
+        } \
     ]
 
-#define LORE2(LINE1,LINE2) \
+
+/*
+As of Minecraft 1.16, although you can specify item names as just a string
+containing embedded formatting codes, Minecraft normalises these names to 
+JSON formatting on server start (apparently). And Minecraft now considers
+the strings with formatting codes to be different to the equivalent JSON.
+
+The different ways of handling equivalent text causes items not to stack:
+https://hub.spigotmc.org/jira/si/jira.issueviews:issue-html/SPIGOT-5063/SPIGOT-5063.html
+https://hub.spigotmc.org/jira/browse/SPIGOT-5964
+
+ * TEXT() is how you would write item names and lore if it was straightforward.
+ * S_TEXT() is how Spigot represents text converted from legacy colour codes,
+   as occurs when, for example, you deserialise a Bukkit-seriallised item.
+
+When Spigot converts embedded legacy character codes into JSON formatted text
+it sets the "text" field to the empty string and puts the JSON text object in
+the "extra" array of objects. Each of these objects has a "text" key. It will
+also have any formatting options, if specified (e.g. in lore), but if the
+"color" key is present, then it will have a value for ALL of the formatting
+options: bold, italic, underlined, strikethrough and obfuscated.
+
+For convenient specification of formatting options in S_TEXT(), one and two
+letter macros are provided, e.g. B for "bold":true and NB for "not bold", i.e.
+"bold":false. For extra convenience, the macro PLAIN signifies that all
+formatting options are false.
+
+TODO: the various functions could be added to the "functions" array using varargs.
+Note possible gotcha: "set_nbt" takes NBT strings, not JSON.
+*/
+
+
+#define B  "bold":true
+#define NB "bold":false
+#define I  "italic":true
+#define NI "italic":false
+#define U  "underlined":true
+#define NU "underlined":false
+#define S  "strikethrough":true
+#define NS "strikethrough":false
+#define O  "obfuscated":true
+#define NO "obfuscated":false
+
+#define PLAIN NB,NI,NU,NS,NO
+#define C(c) "color":#c
+
+#define TEXT(T,...)   {"text":T __VA_OPT__(,) __VA_ARGS__}
+#define S_TEXT(T,...) {"extra":[TEXT(T,__VA_ARGS__)],"text":""}
+
+#define LORE1(OBJ1) \
     "lore": [ \
-        [{"text": LINE1}], \
-        [{"text": LINE2}] \
+        [OBJ1]  \
     ]
 
-#define LORE3(LINE1,LINE2,LINE3) \
+#define LORE2(OBJ1,OBJ2) \
     "lore": [ \
-        [{"text": LINE1}], \
-        [{"text": LINE2}], \
-        [{"text": LINE3}] \
+        [OBJ1], \
+        [OBJ2]  \
+    ]
+
+#define LORE3(OBJ1,OBJ2,OBJ3) \
+    "lore": [ \
+        [OBJ1], \
+        [OBJ2], \
+        [OBJ3]  \
     ]
 
 
 #define INFINITY_1   "{Enchantments:[{id:\"minecraft:infinity\",lvl:1s}]}"
 #define UNBREAKING_1 "{Enchantments:[{id:\"minecraft:unbreaking\",lvl:1s}]}"
-#define SOUVENIR_LORE \
-    LORE3("§3A lost souvenir!", \
-          "§eReturn to the Lost & Found", \
-          "§eat the Corner Store")
+#define R26_LORE \
+    LORE2( \
+        S_TEXT("This looks valuable.", C(dark_purple), PLAIN), \
+        S_TEXT("Maybe you could sell it at Spawncropolis", C(gold), PLAIN) \
+    )
 
-#define souvenir(NAME,MATERIAL,MIN,MAX) \
-    custom_item(NAME,MATERIAL,SOUVENIR_LORE,UNBREAKING_1,MIN,MAX)
+#define clock(MIN,MAX) \
+    custom_item(S_TEXT("Alarm Clock",C(aqua),PLAIN),"minecraft:clock",R26_LORE,UNBREAKING_1,MIN,MAX)
 
+#define odometer(MIN,MAX) \
+    custom_item(S_TEXT("Odometer",C(dark_red),PLAIN),"minecraft:cookie",R26_LORE,UNBREAKING_1,MIN,MAX)
 
-#define souvenir_photo(MIN,MAX) \
-    souvenir("§cSouvenir Photograph","minecraft:paper",MIN,MAX)
+#define vase(MIN,MAX) \
+    custom_item(S_TEXT("Ornate Vase",C(blue),PLAIN),"minecraft:flower_pot",R26_LORE,UNBREAKING_1,MIN,MAX)
 
-#define snow_globe(MIN,MAX) \
-    souvenir("§bSnow Globe","minecraft:glass_bottle",MIN,MAX)
+#define lever(MIN,MAX) \
+    custom_item(S_TEXT("Lever",C(dark_blue),PLAIN),"minecraft:lever",R26_LORE,UNBREAKING_1,MIN,MAX)
 
-#define bottle_opener(MIN,MAX) \
-    souvenir("§9Bottle Opener","minecraft:tripwire_hook",MIN,MAX)
+#define scroll(MIN,MAX) \
+    custom_item(S_TEXT("Scroll",C(dark_aqua),PLAIN),"minecraft:paper",R26_LORE,UNBREAKING_1,MIN,MAX)
 
-#define shot_glass(MIN,MAX) \
-    souvenir("§2Decorative Shot Glass","minecraft:flower_pot",MIN,MAX)
+#define pottery(MIN,MAX) \
+    custom_item(S_TEXT("Pottery",C(dark_gray),PLAIN),"minecraft:bowl",R26_LORE,UNBREAKING_1,MIN,MAX)
 
-#define fools_gold(MIN,MAX) \
-    souvenir("§6Fool's Gold","minecraft:glowstone_dust",MIN,MAX)
+#define coin(MIN,MAX) \
+    custom_item(S_TEXT("Coin",C(gray),PLAIN),"minecraft:gray_dye",R26_LORE,UNBREAKING_1,MIN,MAX)
 
-#define souvenir_keychain(MIN,MAX) \
-    souvenir("§4Souvenir Key Ring","minecraft:name_tag",MIN,MAX)
+#define dice(MIN,MAX) \
+    custom_item(S_TEXT("Dice",C(yellow),PLAIN),"minecraft:beetroot_seeds",R26_LORE,UNBREAKING_1,MIN,MAX)
 
-#define collectors_spoon(MIN,MAX) \
-    souvenir("§5Collectible Spoon","minecraft:lever",MIN,MAX)
+#define pipe(MIN,MAX) \
+    custom_item(S_TEXT("Musical Pipe",C(dark_green),PLAIN),"minecraft:bamboo",R26_LORE,UNBREAKING_1,MIN,MAX)
 
-#define polished_stones(MIN,MAX) \
-    souvenir("§6Polished Stones","minecraft:beetroot_seeds",MIN,MAX)
+#define wine(MIN,MAX) \
+    custom_item(S_TEXT("Wine",C(light_purple),PLAIN),"minecraft:dragon_breath",R26_LORE,UNBREAKING_1,MIN,MAX)
 
-#define walking_stick(MIN,MAX) \
-    souvenir("§7Walking Stick","minecraft:stick",MIN,MAX)
+#define cake(MIN,MAX) \
+    custom_item(S_TEXT("Honey Cake",C(gold),PLAIN),"minecraft:honeycomb",R26_LORE,UNBREAKING_1,MIN,MAX)
 
-#define magnet(MIN,MAX) \
-    souvenir("§eMagnet","minecraft:sunflower",MIN,MAX)
+#define olives(MIN,MAX) \
+    custom_item(S_TEXT("Olives",C(red),PLAIN),"minecraft:cocoa_beans",R26_LORE,UNBREAKING_1,MIN,MAX)
 
-#define bumper_sticker(MIN,MAX) \
-    souvenir("§aBumper Sticker","minecraft:nether_brick",MIN,MAX)
-
-#define arrow_head(MIN,MAX) \
-    souvenir("§bArrowhead","minecraft:prismarine_shard",MIN,MAX)
-
-
-#define nerdcoin(MIN,MAX) \
-    custom_item("§6NerdCoin","minecraft:honeycomb",LORE2("§3Used to purchase","§3items from spawn traders."),INFINITY_1,MIN,MAX)
+#define DRACHNERD_FIREWORKS "{Explosion:{Type:0b,Colors:[I;14602026]}}"
+#define drachnerd(MIN,MAX) \
+    custom_item2(S_TEXT("DrachNerd",C(gold),PLAIN), \
+                 "minecraft:firework_star", \
+                 LORE2(S_TEXT("Used to purchase items from",C(dark_purple),PLAIN), \
+                       S_TEXT("Spawncropolis Traders.",C(dark_purple),PLAIN)), \
+                 UNBREAKING_1,DRACHNERD_FIREWORKS,MIN,MAX)
 
 #define heart_fragment(MIN,MAX) \
-    custom_item("§3Glistening Heart Fragment","minecraft:cyan_dye",LORE1("§bLooks to be about an eighth of a Heart of the Sea."),INFINITY_1,MIN,MAX)
+    custom_item(S_TEXT("Glistening Heart Fragment",C(dark_aqua),PLAIN), \
+                "minecraft:cyan_dye", \
+                LORE1(S_TEXT("Looks to be about an eighth of a Heart of the Sea.",C(aqua),PLAIN)), \
+                INFINITY_1,MIN,MAX)
 
-#define iron_golem_soul(MIN,MAX) \
-    custom_item("§3Golem Soul","minecraft:iron_nugget",LORE2("§oRequired as part of the","§ocost of a golem spawner."),INFINITY_1,MIN,MAX)
+#define golem_soul(MIN,MAX) \
+    custom_item(S_TEXT("Golem Soul",C(dark_aqua),PLAIN), \
+                "minecraft:iron_nugget", \
+                LORE2(S_TEXT("Required as part of the",I), \
+                      S_TEXT("cost of a golem spawner.",I)), \
+                INFINITY_1,MIN,MAX)
 

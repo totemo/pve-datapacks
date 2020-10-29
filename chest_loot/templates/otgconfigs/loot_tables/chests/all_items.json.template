@@ -4,55 +4,55 @@
     "pools": [
         {
             "rolls": 1,
-            "entries": [{ souvenir_photo(1,1) }]
+            "entries": [{ clock(1,1) }]
         },
         {
             "rolls": 1,
-            "entries": [{ snow_globe(1,1) }]
+            "entries": [{ odometer(1,1) }]
         },
         {
             "rolls": 1,
-            "entries": [{ bottle_opener(1,1) }]
+            "entries": [{ vase(1,1) }]
         },
         {
             "rolls": 1,
-            "entries": [{ shot_glass(1,1) }]
+            "entries": [{ lever(1,1) }]
         },
         {
             "rolls": 1,
-            "entries": [{ fools_gold(1,1) }]
+            "entries": [{ scroll(1,1) }]
         },
         {
             "rolls": 1,
-            "entries": [{ souvenir_keychain(1,1) }]
+            "entries": [{ pottery(1,1) }]
         },
         {
             "rolls": 1,
-            "entries": [{ collectors_spoon(1,1) }]
+            "entries": [{ coin(1,1) }]
         },
         {
             "rolls": 1,
-            "entries": [{ polished_stones(1,1) }]
+            "entries": [{ dice(1,1) }]
         },
         {
             "rolls": 1,
-            "entries": [{ walking_stick(1,1) }]
+            "entries": [{ pipe(1,1) }]
         },
         {
             "rolls": 1,
-            "entries": [{ magnet(1,1) }]
+            "entries": [{ wine(1,1) }]
         },
         {
             "rolls": 1,
-            "entries": [{ bumper_sticker(1,1) }]
+            "entries": [{ cake(1,1) }]
         },
         {
             "rolls": 1,
-            "entries": [{ arrow_head(1,1) }]
+            "entries": [{ olives(1,1) }]
         },
         {
             "rolls": 1,
-            "entries": [{ nerdcoin(1,1) }]
+            "entries": [{ drachnerd(1,1) }]
         },
         {
             "rolls": 1,
@@ -60,7 +60,7 @@
         },
         {
             "rolls": 1,
-            "entries": [{ iron_golem_soul(1,1) }]
+            "entries": [{ golem_soul(1,1) }]
         }
     ]
 }

@@ -6,13 +6,13 @@
         "entries": [ \
             { \
                 "weight": 2, \
-                snow_globe(0,1) \
+                odometer(0,1) \
             }, \
             { \
-                fools_gold(0,2) \
+                scroll(0,2) \
             }, \
             { \
-                magnet(0,1) \
+                wine(0,1) \
             }, \
             { \
                 "weight": 2, \

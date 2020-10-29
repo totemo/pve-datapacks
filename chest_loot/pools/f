@@ -5,18 +5,18 @@
         "rolls": 2, \
         "entries": [ \
             { \
-                bottle_opener(0,1) \
+                vase(0,1) \
             }, \
             { \
                 "weight": 2, \
-                polished_stones(0,2) \
+                dice(0,2) \
             }, \
             { \
                 "weight": 2, \
-                bumper_sticker(0,1) \
+                cake(0,1) \
             }, \
             { \
-                nerdcoin(0,1) \
+                drachnerd(0,1) \
             } \
         ] \
     }

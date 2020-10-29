@@ -128,6 +128,14 @@ To verify that all chest loot items are identical to the items in the BeastMaste
 ```
    * If the BeastMaster item stacks with the one in the chest, then they are the same.
 
+In the case of obscure stacking problems, such as those caused by Spigot 1.16's
+new text representation (see "Spigot 1.16 Text Representation" below), you can
+drop the item on the ground and run:
+```
+/data get entity @e[type=item,distance=..10,limit=1]
+```
+to see the NBT data of the item.
+
 
 Checking Loot Tables
 --------------------
@@ -139,3 +147,50 @@ When verifying loot tables, there are two points to consider:
 To check Point 1, you need to create at least one chest for each loot table type. To check Point 2, you want to see a few examples of custom loot from the same group.
 
 Since all loot tables in the same group share the same pool definition file, a reasonable test is therefore to test all loot tables (by creating a chest with that loot) at least once until you have seen a few examples of custom loot from each of the pools.
+
+
+Spigot 1.16 Text Representation
+-------------------------------
+The way that Spigot represents text in 1.16 is the subject, at the time of
+writing, of a couple of issues on the Spigot tracker:
+
+ * https://hub.spigotmc.org/jira/browse/SPIGOT-5063
+ * https://hub.spigotmc.org/jira/browse/SPIGOT-5964
+
+In Minecraft 1.16, Spigot converts embedded legacy character codes into JSON 
+formatted text. It sets the "text" field of the JSON object to the empty 
+string and puts a JSON text object in the "extra" array of objects. In
+addition, when the "color" key is present, Spigot will set the value of 
+all five formatting flags (bold, italic, underlined, strikethrough and
+obfuscated).
+
+For example, "§3Golem Soul" would typically be rendered in JSON as:
+```
+"name": {
+    "text": "Golem Soul",
+    "color": "dark_aqua"
+}
+```
+but is instead represented by:
+```
+"name": {
+    "extra": [
+        {
+            "text": "Golem Soul",
+            "color": "dark_aqua",
+            "bold": false,
+            "italic": false,
+            "underlined": false,
+            "strikethrough": false,
+            "obfuscated": false
+        }
+    ],
+    "text": ""
+}
+
+```
+
+Interestingly, in the case of lore text with only a single formatting flag
+("italic": true) and no "color" setting, Spigot only stored the italic flag;
+not the other 4 flags.
+

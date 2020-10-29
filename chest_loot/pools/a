@@ -5,18 +5,18 @@
         "rolls": 1, \
         "entries": [ \
             { \
-                souvenir_photo(0,2) \
+                clock(0,2) \
             }, \
             { \
                 "weight": 2, \
-                fools_gold(0,2) \
+                scroll(0,2) \
             }, \
             { \
                 "weight": 2, \
-                magnet(0,2) \
+                wine(0,2) \
             }, \
             { \
-                nerdcoin(0,1) \
+                drachnerd(0,1) \
             } \
         ] \
     }

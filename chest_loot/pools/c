@@ -6,17 +6,17 @@
         "entries": [ \
             { \
                 "weight": 2, \
-                shot_glass(0,1) \
+                lever(0,1) \
             }, \
             { \
-                souvenir_keychain(0,2) \
+                pottery(0,2) \
             }, \
             { \
                 "weight": 2, \
-                walking_stick(0,1) \
+                olives(0,1) \
             }, \
             { \
-                iron_golem_soul(0,1) \
+                golem_soul(0,1) \
             } \
         ] \
     }

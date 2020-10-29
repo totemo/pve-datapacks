@@ -3,7 +3,7 @@
 
 {
     "pools": [
-        TABLE("minecraft:vanilla/chests/nether_bridge"),
+        TABLE("minecraft:vanilla/chests/bastion_treasure"),
         POOL_I
     ]
 }

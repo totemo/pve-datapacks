@@ -6,17 +6,17 @@
         "entries": [ \
             { \
                 "weight": 2, \
-                souvenir_photo(0,1) \
+                clock(0,1) \
             }, \
             { \
                 "weight": 2, \
-                souvenir_keychain(0,1) \
+                pottery(0,1) \
             }, \
             { \
-                arrow_head(0,1) \
+                pipe(0,1) \
             }, \
             { \
-                nerdcoin(0,1) \
+                drachnerd(0,1) \
             } \
         ] \
     }

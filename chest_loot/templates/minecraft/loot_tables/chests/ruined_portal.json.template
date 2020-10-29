@@ -1,0 +1,9 @@
+#include "items/all-items"
+#include "pools/h"
+
+{
+    "pools": [
+        TABLE("minecraft:vanilla/chests/ruined_portal"),
+        POOL_H
+    ]
+}
